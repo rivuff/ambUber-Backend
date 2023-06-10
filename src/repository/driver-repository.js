@@ -1,9 +1,9 @@
-const {Driver} = require('../model/index');
+const { Driver } = require('../model/index');
 
-class DriverRepository{
+class DriverRepository {
 
-    async createDriver(data){
-        
+    async createDriver(data) {
+
         try {
             console.log(data);
             const driver = await Driver.create(data);
@@ -14,7 +14,7 @@ class DriverRepository{
         }
     }
 
-    async getDriver(data){
+    async getDriver(data) {
         try {
             const driver = await Driver.findById(data);
             return driver;
@@ -24,7 +24,7 @@ class DriverRepository{
         }
     }
 
-    async delete(data){
+    async delete(data) {
         try {
             console.log(data);
             const response = await Driver.findByIdAndDelete(data);
@@ -37,4 +37,4 @@ class DriverRepository{
     }
 }
 
-module.exports = DriverRepository
+module.exports = DriverRepository;
